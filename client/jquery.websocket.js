@@ -8,7 +8,7 @@ var div = this;
 
 function onWsMessage(message) {
    var json = JSON.parse(message.data);
-  console.log(json);
+  //alert(JSON.stringify(json));
 
    if (json.type === 'message') {
      content.append('<h2>' + json.data.message + '</h2>');
@@ -26,7 +26,7 @@ $.fn.createWebSocket = function () {
   {
     div = this;
      // Let us open a web socket
-     ws = new WebSocket("ws://localhost:8080/start", ['echo-protocol']);
+     ws = new WebSocket("ws://182.50.155.56:8080/start", ['echo-protocol']);
      ws.onopen = function() {
        div.append("<h3>Connected.</h3>");
 
